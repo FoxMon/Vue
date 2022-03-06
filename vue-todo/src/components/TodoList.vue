@@ -1,12 +1,12 @@
 <template>
   <div>
-    <ul>
+    <transition-group name="list" tag="ul">
       <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.item" class="shadow">
         <span class="checkBtn" v-on:click="toggleComplete(todoItem, index)">check</span>
         <span v-bind:class="{textCompleted: todoItem.complete}">{{ todoItem.item }}</span>
         <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">remove</span>
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 <script>
@@ -55,5 +55,13 @@ li {
 .textCompleted {
   text-decoration: line-through;
   color: #b3adad;
+}
+/* list item transition effect */
+.list-enter-active .list-leave-active {
+  transition: all 1s;
+}
+.list-enter .list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>
