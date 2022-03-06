@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    addTodo: function() {
+    addTodo() {
       if(this.newTodoItem !== '') {
         // 버튼 클릭 or 엔터 입력 시, addTodoItem 상위 컴포넌트에 이벤트 발생 이 때 인자도 같이 올라감
         this.$emit('addTodoItem', this.newTodoItem)
@@ -43,7 +43,7 @@ export default {
         this.showModal = true;
       }
     },
-    clearInput: function() {
+    clearInput() {
       this.newTodoItem = "";
     }
   },

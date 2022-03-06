@@ -13,11 +13,11 @@
 export default {
   props: ['propsdata'],
   methods: {
-    removeTodo: function(todoItem, index) {
+    removeTodo(todoItem, index) {
       // removeItem event를 발생시켜서 2개의 인자를 함께 보냄
       this.$emit('removeItem', todoItem, index);
     },
-    toggleComplete: function(todoItem, index) {
+    toggleComplete(todoItem, index) {
       this.$emit('toggleItem', todoItem, index);
     }
   }
